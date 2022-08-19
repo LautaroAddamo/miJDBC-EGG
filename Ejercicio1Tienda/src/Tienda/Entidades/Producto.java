@@ -1,24 +1,21 @@
-
 package Tienda.Entidades;
 
-
 public final class Producto {
-    
+
     private int codigo;
     private String nombre;
     private double precio;
     private int codigoFabricante;
-    private Fabricante fabricante;
 
     public Producto() {
     }
 
-    public Producto(int codigo, String nombre, double precio, int codigoFabricante, Fabricante fabricante) {
+    public Producto(int codigo, String nombre, double precio, int codigoFabricante) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
         this.codigoFabricante = codigoFabricante;
-        this.fabricante = fabricante;
+
     }
 
     public int getCodigo() {
@@ -53,22 +50,9 @@ public final class Producto {
         this.codigoFabricante = codigoFabricante;
     }
 
-    public Fabricante getFabricante() {
-        return fabricante;
-    }
-
-    public void setFabricante(Fabricante fabricante) {
-        this.fabricante = fabricante;
-    }
-
     @Override
     public String toString() {
-        return  "Codigo:" + codigo + ". Nombre:" + nombre + ". Precio:" + precio + ". Codigo Fabricante: " + codigoFabricante + ". Fabricante:" + fabricante;
+        return "Codigo:" + codigo + ". Nombre:" + nombre + ". Precio:" + precio + ". Codigo Fabricante: " + codigoFabricante;
     }
 
-     
-
-    
-    
-    
 }

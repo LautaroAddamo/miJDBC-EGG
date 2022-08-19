@@ -66,7 +66,7 @@ public abstract class DAO {
         try {
             conectarBase();
             sentencia = conexion.createStatement();
-            sentencia.executeQuery(sql);
+            resultado = sentencia.executeQuery(sql);
         } catch (Exception e) {
             System.out.println(e.toString());
         }
