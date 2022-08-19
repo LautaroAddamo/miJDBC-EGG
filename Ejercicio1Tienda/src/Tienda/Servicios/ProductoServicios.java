@@ -31,7 +31,7 @@ public class ProductoServicios {
     }
 
     public void insertarProducto(String nombre, double precio, int codFab) throws Exception {
-        if (codFab >= 10 || 0 < codFab) {
+        if (codFab >= 10 || 0 > codFab) {
             throw new Exception("El codigo de fabricante es invalido");
         }
         validar(nombre, precio);//valida los datos
@@ -90,6 +90,22 @@ public class ProductoServicios {
             throw new Exception("El precio debe ser mayor que 0");
         }
     }
+    
+    public void eliminarProducto()throws Exception{
+        System.out.println("Indique el codigo del producto a elminar");
+        int codigo = leer.nextInt();
+        eliminarProducto(codigo);
+    }
+    public void eliminarProducto(int codigo) throws Exception{
+        try {
+            if (codigo<0) {
+                throw new Exception("Codigo invalido");
+            }
+            dao.eliminarProducto(codigo);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+    }
 
     public void listarProductos() throws Exception {
         Collection<Producto> listaProductos = dao.listarProductos();
@@ -114,6 +130,10 @@ public class ProductoServicios {
         for (Producto producto : productosEntre) {
             System.out.println(producto);
         }
+    }
+    public void mostrarMasbarato() throws Exception{
+        Producto masBarato = dao.productoMasBarato();
+        System.out.println("Nombre: " + masBarato.getNombre() + ". Precio: " + masBarato.getPrecio());
     }
 
 }

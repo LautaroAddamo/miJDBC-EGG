@@ -112,7 +112,7 @@ public final class ProductoDAO extends DAO {
 
     public Collection<Producto> mostrarPortatiles() throws Exception { //Busca y muestra solo las portatiles
         try {
-            String sql = "SELECT * FROM Producto WHERE nombre LIKE %portatil%;";
+            String sql = "SELECT * FROM Producto WHERE nombre LIKE '%portatil%';";
             consultarBase(sql);
             Producto producto = null;
             Collection<Producto> productos = new ArrayList();

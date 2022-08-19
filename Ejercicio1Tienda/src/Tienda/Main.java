@@ -1,21 +1,13 @@
 package Tienda;
 
-import Tienda.Servicios.ProductoServicios;
+import Tienda.Orquestador.Orquestador;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        ProductoServicios ps = new ProductoServicios();
+        ;
+        Orquestador.crearOrquestador();
 
-        ps.listarProductos();
-
-        int opc = 1;
-        switch (opc) {
-            case 1:
-                break;
-            case 2:
-                break;
-        }
     }
 
 }

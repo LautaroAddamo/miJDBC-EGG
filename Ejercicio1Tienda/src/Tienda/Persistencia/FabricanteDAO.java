@@ -31,9 +31,9 @@ public final class FabricanteDAO extends DAO {
         }
     }
 
-    public void eliminarFabricante(Fabricante fabricante) throws Exception {
+    public void eliminarFabricante(int codigo) throws Exception {
         try {
-            String sql = "DELETE FROM Fabricante WHERE codigo = " + fabricante.getCodigo() + ";";
+            String sql = "DELETE FROM Fabricante WHERE codigo = " + codigo + ";";
             insertarModificarEliminar(sql);
         } catch (Exception e) {
             System.out.println(e.toString());
